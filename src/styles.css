@@ -1,0 +1,270 @@
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --mobile-width: 800px;
+}
+
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+body {
+  font-family: sans-serif;
+  background-color: black;
+  min-height: 100vh;
+  margin: 0;
+  /* max-width: 80vw; */
+  /* margin: 0 auto; */
+}
+
+@media screen and (max-width: var(--mobile-width)) {
+  body {
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+/* Style the navbar */
+#navbar {
+  top: 0;
+  z-index: 10;
+  position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  /* background-color: #333; */
+}
+
+.navContainer {
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.navButtons {
+  color: white;
+  padding: 14px;
+  text-decoration: none;
+}
+.navButtons:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+}
+
+/* Navbar links */
+/* #navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+} */
+/* 
+#navbar a :hover {
+  color: var(--blue);
+  background-color: #aaa;
+} */
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+/* Style the navbar */
+
+#home {
+  position: relative;
+}
+
+#bigImg {
+  object-fit: cover;
+  width: 100%;
+  height: 50vw;
+}
+
+#blackBackGround {
+  position: absolute;
+  background-color: black;
+  opacity: 0.65;
+  left: 0;
+  top: 0;
+  width: 50%; /* Full width in phone */
+  margin-left: 50%; /* 0% in phone */
+  height: 100%;
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  #blackBackGround {
+    width: 100%; /* Full width */
+    margin-left: 0%; /* 0% in phone */
+  }
+}
+
+#rightCentered {
+  /* padding: auto; */
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  color: white;
+  opacity: 1;
+
+  margin: auto 0 auto 1em;
+}
+#rightCentered > * {
+  margin: 0;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* display: none; */
+}
+
+.gallery-image-container {
+  height: 40vh;
+  flex-grow: 1;
+  padding: 0.5em;
+}
+.gallery-image {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  filter: grayscale();
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+}
+.gallery-image:hover {
+  scale: 1.05;
+  transition: 0.25s;
+  transition-timing-function: ease-in;
+  filter: none;
+}
+
+.hr-line {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid white;
+  color: white;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+.hr-line span {
+  background: #000;
+  padding: 0 10px;
+}
+
+.gardient-black-orange {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgb(12, 190, 107)
+  );
+}
+
+.gardient-green-black {
+  color: white;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(12, 190, 107),
+    rgba(255, 0, 0, 0)
+  );
+}
+
+.gradient-black-purple {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 0)
+  );
+}
+
+.carousel-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 0 auto;
+}
+
+.carosel-image-container {
+  max-height: 50vh;
+}
+
+.carosuel-item {
+  object-fit: contain;
+  width: 100%;
+  height: 80vh;
+  display: block;
+  /* border: 2px solid black; */
+}
+
+.carosuel-item > img {
+  border: 2px solid black;
+}
+
+.carosel-image-fade-out {
+  transition: 0.3s;
+  opacity: 0;
+}
+.carosel-image-fade-in {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.arrow-cnt {
+  /* background: green; */
+  margin: auto 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow-btn {
+  color: white;
+  font-size: 3em;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.arrow-btn:hover {
+  color: black;
+  transition: 0.5s;
+}
+/* 
+.mainContent {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: var(--mobile-width)) {
+  .mainContent {
+    width: 100vw;
+    margin: 0;
+  }
+} */
+
+#contact {
+  margin: 0 auto;
+  max-width: 50vw;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1em;
+}
+.profile-image-container {
+  border-radius: 25%;
+}
